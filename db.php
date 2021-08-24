@@ -1,14 +1,11 @@
 <?php 
-$dsn = "mysql:host=localhost;dbname=boutique_en_ligne";
+$dbhost = "localhost";
 $username = "franck";
 $password = "arinfo2021";
-$option = [];
-$connection = new PDO ($dsn, $username, $password, $option);
-
-try {
-    print "Connexion réussie";
-} catch (PDOException $e) {
-    echo $e->getMessage();
-    die();
+$dbname = "boutique_en_ligne";
+if(!$con = mysqli_connect($dbhost, $username, $password, $dbname))
+{
+    die("failed to connect!");
 }
+
 ?>
